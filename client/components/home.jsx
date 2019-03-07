@@ -1,6 +1,7 @@
 import React from 'react';
-import reddit from "../redditapi.js";
+import {searchreddit} from "../redditapi.js";
 import Dropdown from "./dropDown.jsx";
+import Form from "./form.jsx";
 require("../index.scss");
 
 export default class Home extends React.Component {
@@ -12,10 +13,19 @@ export default class Home extends React.Component {
             sortBy: "",
             subreddit: '',
             list: [],
+            time: '',
         }
         this.handleLimit = this.handleLimit.bind(this);
         this.handleFormChange = this.handleFormChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    async componentDidMount() {
+      searchreddit(this.state.term, this.state.limit, this.state.sortBy)
+      .then( results => {
+        console.log(results);
+      }) 
+      
     }
 
     handleLimit(e) {
@@ -41,6 +51,10 @@ export default class Home extends React.Component {
        return { list: newState }
      })
    }
+
+
+
+   
 
 
   render() {

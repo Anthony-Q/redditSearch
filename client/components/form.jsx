@@ -5,9 +5,9 @@ export default function Form(props) {
         <div className="search-box">
         <h3>Search Reddit</h3>
         <button className="search-this" >Button1</button>
-      <button className="search-this" onClick={() => reddit.subredditSearch(this.state.term)}>Button2</button>
+      <button className="search-this">Button2</button>
 
-        <form className="search-form" handleFormChange = {this.handleFormChange}></form>
+        <form className="search-form" handleFormChange = {(e) => props.handleFormChange(e)}></form>
         <input type="text" className="search-input" placeholder="search..." />
       </div>
     )

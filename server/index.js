@@ -11,3 +11,8 @@ app.listen( PORT, () => {
     console.log(`listening on ${PORT}...`);
 });
 
+
+app.get('/redditthread', (req, res) => {
+  
+})
+

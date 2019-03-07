@@ -1,16 +1,16 @@
 import React from 'react';
 
-export default Dropdown = () => {
+export default function Dropdown(props)  {
     return (
     <div className="dropdown">
-      <button className="dropDown-btn">Dropdown</button>
-        <div className="dropdown-list">
-          <a href="#">5</a>
-          <a href="#">10</a>
-          <a href="#">15</a>
-          <a href="#">25</a>
-          <a href="#">50</a>
-          <a href="#">100</a>
+      <button className="dropbtn">Number of Items</button>
+        <div className="dropdown-content" >
+          <a href="#" onClick={e => props.handleLimit(e)} >5</a>
+          <a href="#" onClick={e => props.handleLimit(e)}>10</a>
+          <a href="#" onClick={e => props.handleLimit(e)}>15</a>
+          <a href="#" onClick={e => props.handleLimit(e)}>25</a>
+          <a href="#" onClick={e => props.handleLimit(e)}>50</a>
+          <a href="#" onClick={e => props.handleLimit(e)}>100</a>
         </div>
     </div>
     )
